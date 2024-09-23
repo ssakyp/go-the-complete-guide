@@ -1,4 +1,6 @@
-package main
+package main // every go code file needs a package
+// must have at least one package
+// the idea is to simply organize the code
 
 import "fmt"
 
