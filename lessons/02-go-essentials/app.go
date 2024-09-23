@@ -5,7 +5,7 @@ package main // every go code file needs a package
 
 // one module consists of at least one package
 // go mod init ____
-// go build => creates an executable file
+// go build => creates an executable file => can be executed without installing go
 
 import "fmt"
 
