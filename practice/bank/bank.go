@@ -15,6 +15,7 @@ func main() {
   var choice int
   fmt.Print("Your choice: ")
   fmt.Scan(&choice)
+  fmt.Println("Your choice: ", choice)
 
   //wantsCheckBalance := choice == 1
   if choice == 1 {
@@ -26,8 +27,9 @@ func main() {
 
     if depositAmount <= 0 {
       fmt.Println("Invalid amount. Must be greater than 0.")
-      return
+      continue
     }
+    // continue => skip the rest of the code
     
     accountBalance += depositAmount
     fmt.Println("Balance updated! New amount: ", accountBalance)
@@ -44,9 +46,10 @@ func main() {
     fmt.Println("Balance updated! New amount: ", accountBalance)
   } else {
     fmt.Println("Goodbye!")
+    break
   }
-  
-  fmt.Println("Your choice: ", choice)
     }
+
+  fmt.Println("Thanks for choosing our bank!")
 }
 
