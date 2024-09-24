@@ -37,6 +37,7 @@ func main() {
   if err != nil {
     fmt.Println("ERROR")
     fmt.Println(err)
+    fmt.Println("------------------------------")
   }
   
   fmt.Println("Welcome to Go Bank!")
