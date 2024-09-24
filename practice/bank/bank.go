@@ -34,6 +34,12 @@ func main() {
   } else if choice == 3 {
     var withdrawAmount float64
     fmt.Scan(&withdrawAmount)
+    
+     if withdrawAmount > 0 {
+      fmt.Println("Invalid amount. You can't withdraw more than you have.")
+      return
+    }
+    
     accountBalance -= withdrawAmount
     fmt.Println("Balance updated! New amount: ", accountBalance)
   } else {
