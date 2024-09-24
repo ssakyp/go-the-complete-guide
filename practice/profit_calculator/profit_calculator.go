@@ -22,9 +22,9 @@ func main() {
   // ratio := earningsBeforeTax / earningsAfterTax
   
   earningsBeforeTax, earningsAfterTax, ratio := profitCalculator(revenue, expenses, taxRate)
-  fmt.Printf("%.1f", earningsBeforeTax)
-  fmt.Printf("%.1f", earningsAfterTax)
-  fmt.Printf("%.1f", ratio)
+  fmt.Printf("%.1f\n", earningsBeforeTax)
+  fmt.Printf("%.1f\n", earningsAfterTax)
+  fmt.Printf("%.3f\n", ratio)
 
 
 }
