@@ -39,7 +39,7 @@ func main() {
     
      if withdrawAmount > 0 {
       fmt.Println("Invalid amount. You can't withdraw more than you have.")
-      return
+      continue
     }
     
     accountBalance -= withdrawAmount
