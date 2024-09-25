@@ -11,11 +11,12 @@ func main() {
   fmt.Pritln("Age: ", agePointer) // 0x004....
   fmt.Println(*agePointer) // 32
   
-  adultYears := getAdultYears(age)
-  fmt.Println(adultYears)
+  adultYears := getAdultYears(&age)
+  fmt.Println(adultYears) // 14
 
 }
 
-func getAdultYears(age int) int {
-  return age - 18
+func getAdultYears(age *int) int {
+  return *age - 18
+  // we can't perform pointer arithmetics
 }
