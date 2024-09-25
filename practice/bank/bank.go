@@ -1,11 +1,6 @@
 package main
 
-import (
-  "fmt"
-  "os"
-  "strconv"
-  "errors"
-)
+import "fmt"
 
 const accountBalanceFile = "balance.txt"
 
