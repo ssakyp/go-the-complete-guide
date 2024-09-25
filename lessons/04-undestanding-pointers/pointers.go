@@ -17,6 +17,7 @@ func main() {
 }
 
 func getAdultYears(age *int) int {
+  // no copy is created
   return *age - 18
   // we can't perform pointer arithmetics
 }
