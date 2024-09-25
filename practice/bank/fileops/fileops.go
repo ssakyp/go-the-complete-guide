@@ -1,5 +1,5 @@
 
-package "fileops"
+package fileops
 
 import (
   "strconv"
