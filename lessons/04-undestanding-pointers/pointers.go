@@ -5,7 +5,10 @@ import "fmt"
 func main() {
   age := 32 // regular variable
 
-  fmt.Pritln("Age: ", age)
+  var agePointer *int
+  agePointer = &age
+  
+  fmt.Pritln("Age: ", agePointer)
   
   adultYears := getAdultYears(age)
   fmt.Println(adultYears)
