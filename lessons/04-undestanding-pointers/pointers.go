@@ -11,12 +11,12 @@ func main() {
   fmt.Pritln("Age: ", agePointer) // 0x004....
   fmt.Println(*agePointer) // 32
   
-  getAdultYears(&age)
+  editAgeToAdultYears(&age)
   fmt.Println(age) // 14
 
 }
 
-func getAdultYears(age *int) {
+func editAgeToAdultYears(age *int) {
   // no copy is created
   *age -= 18
   // we can't perform pointer arithmetics
