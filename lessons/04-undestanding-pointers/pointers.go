@@ -8,7 +8,8 @@ func main() {
   var agePointer *int
   agePointer = &age
   
-  fmt.Pritln("Age: ", agePointer)
+  fmt.Pritln("Age: ", agePointer) // 0x004....
+  fmt.Println(*agePointer) // 32
   
   adultYears := getAdultYears(age)
   fmt.Println(adultYears)
