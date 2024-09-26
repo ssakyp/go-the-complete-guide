@@ -32,7 +32,7 @@ func main() {
 
 func outputUserDetails(u *user) {
   // ...
-   fmt.Println(u.firstName, u.lastName, u.birthDate)
+   fmt.Println((*u).firstName, u.lastName, u.birthDate)
 }
 
 func getUserData(promptText string) string {
