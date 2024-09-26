@@ -4,11 +4,22 @@ import (
   "fmt"
   "time"
 )
+
 type user struct {
   firstName string
   lastName string
   birthDate string
   createdAt time.Time
+}
+
+func (u *user) outputUserDetails() {
+  // ...
+   fmt.Println((*u).firstName, u.lastName, u.birthDate)
+}
+
+func (u *user) clearUserName() {
+  u.firtsName = ""
+  u.lastName = ""
 }
 
 func main() {
@@ -26,13 +37,10 @@ func main() {
   
   // ... do something awesome with that gathered data
 
-  outputUserDetails(&appUser)
+  appUser.outputUserDetails()
+  appUser.clearUserData() // copy is cleared
+  appUser.outputUserDetails()
                           
-}
-
-func outputUserDetails(u *user) {
-  // ...
-   fmt.Println((*u).firstName, u.lastName, u.birthDate)
 }
 
 func getUserData(promptText string) string {
