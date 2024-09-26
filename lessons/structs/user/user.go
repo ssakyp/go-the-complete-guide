@@ -7,9 +7,9 @@ import (
 )
 
 type User struct {
-  firstName string
-  lastName string
-  birthDate string
+  FirstName string
+  LastName string
+  BirthDate string
   createdAt time.Time
 }
 
@@ -29,9 +29,9 @@ func NewUser(firstName, lastName, birthDate string) (*User, error) {
       return nil, errors.New("First name, last name, birth date is required!")
   }
   return &User {
-    firstName: firstName,
-    lastName: lastName,
-    birthDate: birthDate,
+    FirstName: firstName,
+    LastName: lastName,
+    BirthDate: birthDate,
     createdAt: time.Now(),
   }, nil
 }
