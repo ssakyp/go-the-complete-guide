@@ -9,19 +9,19 @@ import (
 )
 
 type Note struct {
-  title string
-  content string
-  createdAt time.Time
+  Title string
+  Content string
+  CreatedAt time.Time
 }
 
 
 func (note Note) Display() {
-  fmt.Printf("Your not titled %v has the following content:\n\n%v", note.title, note.content)
+  fmt.Printf("Your not titled %v has the following content:\n\n%v", note.Title, note.Content)
 }
 
 func (note Note) Save() error {
   fileName := strings.ReplaceAll(note.title, " ", "_")
-  fileName := strings.ToLower(fileName)
+  fileName := strings.ToLower(fileName) + ".json"
 
   json, err := json.Marshal(note)
 
