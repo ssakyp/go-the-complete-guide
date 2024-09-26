@@ -25,10 +25,11 @@ func getNoteData() (string, string) {
 }
 
 func getUserInput(prompt string) string {
-  fmt.Prtint(promt)
+  fmt.Prtintf("%v ", promt)
   // scan cannot work for multiple space lines
   // var value string
   // fmt.Scanln(&value)
+ 
   reader := bufio.NewReader(os.Stdin)
   text, err := reader.ReadString('\n')
   if err != nil {
