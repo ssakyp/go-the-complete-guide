@@ -8,6 +8,10 @@ type Note struct {
   createdAt time.Time
 }
 
-func New(title, content string) Note {
-  return Note{title, content, time.Now()}
+func New(title, content string) (Note, error) {
+   if title == "" || content == "" {
+    return Note{}, errors.New("Invalid input")
+  }
+
+  return Note{title, content, time.Now()}, nil
 }
