@@ -1,6 +1,15 @@
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "time"
+)
+type user struct {
+  firstName string
+  lastName string
+  birthDate string
+  createdAt time.Time
+}
 
 func main() {
   firstName := getUserData("Please enter your first name: ")
