@@ -9,10 +9,14 @@ func main() {
 
   // ... do something awesome with that gathered data
 
-  fmt.Println(firstName, lastName, birthDate)
+  outputUserDetails(firstName, lastName, birthDate)
                           
 }
 
+func outputUserDetails(firstName, lastName, birthDate string) {
+  // ...
+   fmt.Println(firstName, lastName, birthDate)
+}
 
 func getUserData(promptText string) string {
   fmt.Println(promptText)
