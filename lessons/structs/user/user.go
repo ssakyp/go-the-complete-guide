@@ -13,6 +13,13 @@ type User struct {
   createdAt time.Time
 }
 
+// go does not have inheritance, but still we can make up a new struct based on an existing one
+type Admin struct {
+  email string
+  password string
+  User
+}
+
 func (u *User) OutputUserDetails() {
   // ...
    fmt.Println((*u).firstName, u.lastName, u.birthDate)
@@ -21,6 +28,19 @@ func (u *User) OutputUserDetails() {
 func (u *User) ClearUserName() {
   u.firtsName = ""
   u.lastName = ""
+}
+
+func NewAdmin(email, pasword string) Admin {
+  return Admin{
+    email: email,
+    password: password,
+    User: User{
+      firstName: "ADMIN",
+      lastName: "ADMIN",
+      birthDate: "---",
+      createdAt: time.Now(),
+    }
+  }
 }
 
 // constructor pattern
