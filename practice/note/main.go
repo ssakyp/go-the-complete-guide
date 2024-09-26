@@ -31,10 +31,5 @@ func getUserInput(prompt string) (string, error) {
   fmt.Prtint(promt)
   var value string
   fmt.Scanln(&value)
-
-  if value == "" {
-    return "", errors.New("Invalid input")
-  }
-
   return value, nil
 }
