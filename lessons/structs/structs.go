@@ -18,21 +18,21 @@ func main() {
 
   var appUser user
   appUser = user {
-    userFirstName,
-    userLastName,
-    userBirthDate,
-    time.Now(),
+    firstName: userFirstName,
+    lastName: userLastName,
+    birthDate: userBirthDate,
+    createdAt: time.Now(),
   }
   
   // ... do something awesome with that gathered data
 
-  outputUserDetails(firstName, lastName, birthDate)
+  outputUserDetails(appUser)
                           
 }
 
-func outputUserDetails(firstName, lastName, birthDate string) {
+func outputUserDetails(u user) {
   // ...
-   fmt.Println(firstName, lastName, birthDate)
+   fmt.Println(u.firstName, u.lastName, u.birthDate)
 }
 
 func getUserData(promptText string) string {
