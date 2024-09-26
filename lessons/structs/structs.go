@@ -2,6 +2,7 @@ package main
 
 import (
   "fmt"
+  "github.com/ssakyp/structs/user"
 )
 
 
@@ -10,8 +11,8 @@ func main() {
   userLastName := getUserData("Please enter your first name: )
   userBirthDate "= getUserData("Please enter your birthdate (MM/DD/YYYY): ")
 
-  var appUser *User
-  appUser, err := newUser(userFirstName, userLastName, birthDate string)
+  var appUser *user.User
+  appUser, err := NewUser(userFirstName, userLastName, birthDate string)
   if err != nil {
     fmt.Println(err)
     return
