@@ -12,7 +12,7 @@ func main() {
   userBirthDate "= getUserData("Please enter your birthdate (MM/DD/YYYY): ")
 
   var appUser *user.User
-  appUser, err := NewUser(userFirstName, userLastName, birthDate string)
+  appUser, err := user.New(userFirstName, userLastName, birthDate string)
   if err != nil {
     fmt.Println(err)
     return
@@ -21,9 +21,9 @@ func main() {
   
   // ... do something awesome with that gathered data
 
-  appUser.outputUserDetails()
-  appUser.clearUserData() // copy is cleared
-  appUser.outputUserDetails()
+  appUser.OutputUserDetails()
+  appUser.ClearUserData() // copy is cleared
+  appUser.OutputUserDetails()
                           
 }
 
