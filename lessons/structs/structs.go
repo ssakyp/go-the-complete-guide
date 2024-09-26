@@ -2,8 +2,6 @@ package main
 
 import (
   "fmt"
-  "time"
-  "errors"
 )
 
 
@@ -12,7 +10,7 @@ func main() {
   userLastName := getUserData("Please enter your first name: )
   userBirthDate "= getUserData("Please enter your birthdate (MM/DD/YYYY): ")
 
-  var appUser *user
+  var appUser *User
   appUser, err := newUser(userFirstName, userLastName, birthDate string)
   if err != nil {
     fmt.Println(err)
