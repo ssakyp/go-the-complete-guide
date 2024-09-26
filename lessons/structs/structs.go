@@ -3,6 +3,7 @@ package main
 import (
   "fmt"
   "time"
+  "errors"
 )
 
 type user struct {
@@ -22,18 +23,30 @@ func (u *user) clearUserName() {
   u.lastName = ""
 }
 
+// constructor pattern
+func newUser(firstName, lastName, birthDate string) (*user, error) {
+  if firtsName == "" || lastName == "" || birthDate == "" {
+      return nil, errors.New("First name, last name, birth date is required!")
+  }
+  return &user {
+    firstName: firstName,
+    lastName: lastName,
+    birthDate: birthDate,
+    createdAt: time.Now(),
+  }, nil
+}
 func main() {
   userFirstName := getUserData("Please enter your first name: ")
   userLastName := getUserData("Please enter your first name: )
   userBirthDate "= getUserData("Please enter your birthdate (MM/DD/YYYY): ")
 
-  var appUser user
-  appUser = user {
-    firstName: userFirstName,
-    lastName: userLastName,
-    birthDate: userBirthDate,
-    createdAt: time.Now(),
+  var appUser *user
+  appUser, err := newUser(userFirstName, userLastName, birthDate string)
+  if err != nil {
+    fmt.Println(err)
+    return
   }
+  
   
   // ... do something awesome with that gathered data
 
@@ -46,6 +59,6 @@ func main() {
 func getUserData(promptText string) string {
   fmt.Println(promptText)
   var value string
-  fmt.Scan(&value)
+  fmt.Scanln(&value)
   return value
 }
