@@ -24,7 +24,7 @@ func (u *User) ClearUserName() {
 }
 
 // constructor pattern
-func NewUser(firstName, lastName, birthDate string) (*User, error) {
+func New(firstName, lastName, birthDate string) (*User, error) {
   if firtsName == "" || lastName == "" || birthDate == "" {
       return nil, errors.New("First name, last name, birth date is required!")
   }
