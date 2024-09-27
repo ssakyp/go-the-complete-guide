@@ -3,17 +3,37 @@ package main
 import (
  "fmt"
  "github.com/ssakyp/note/note"
+ "github.com/ssakyp/note/todo"
  "bufio"
  "os"
  "strings"
 )
 func main() {
  title, content := getNoteData()
+ todoText := getUserInput("Todo text: ")
+
+ todo, err := todo.New(todoText)
+
+  if err != nil {
+  fmt.Print(err)
+  return
+ }
+ 
  userNote, err := note.New(title, content)
  if err != nil {
   fmt.Print(err)
   return
  }
+ 
+ todo.Display()
+
+ err = todo.Save()
+ if err != nil {
+  fmt.Println("Saving the todo failed.")
+  return
+ }
+
+ fmt.Println("Saving the todo succeeded!")
  userNote.Display()
 
  err = userNote.Save()
