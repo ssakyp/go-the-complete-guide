@@ -32,4 +32,9 @@ func main() {
     fmt.Println(index)
     fmt.Println(value)
   }
+
+  for key, value := range courseRatings {
+    fmt.Println("Key: ", key)
+    fmt.Println("Value: ", value)
+  }
 }
