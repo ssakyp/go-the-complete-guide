@@ -30,6 +30,12 @@ type outputtable interface {
 // }
 
 func main() {
+ printSomething(1)
+ printSomething(2.5)
+ printSomething("Any type")
+
+
+ 
  title, content := getNoteData()
  todoText := getUserInput("Todo text: ")
 
@@ -54,6 +60,40 @@ func main() {
  outputData(userNote)
 }
 
+// interface {} any type 
+func printSomething(value interface{}) {
+ intVal, ok := value.(int) // will be true if val is int
+
+ if ok {
+  fmt.Println("Integer: ", intVal)
+  return
+ }
+
+  floatVal, ok := value.(float64) // will be true if val is float
+
+ if ok {
+  fmt.Println("Float: ", floatVal)
+  return
+ }
+
+  stringVal, ok := value.(string) // will be true if val is string
+
+ if ok {
+  fmt.Println("String: ", stringVal)
+  return
+ }
+
+
+ 
+ // switch value.(type) {
+ //  case int:
+ //   fmt.Println("Integer: ", value)
+ //  case float64:
+ //   fmt.Println("Float: ", value)
+ //  case string:
+ //   fmt.Println(value)
+ // }
+}
 
 func outputData(data outputtable) error {
  data.Display()
