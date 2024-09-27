@@ -1,5 +1,12 @@
 package main
 
+// type aliases
+type floatMap map[string]float64
+
+func (m floatMap) output() {
+  fmt.Println(m)
+}
+
 func main() {
   // if we know the number of elements in advance use make
   userNames := make([]string, 2, 5)
@@ -12,7 +19,7 @@ func main() {
   fmt.Println(userNames)
 
   // for maps only len can be set
-  courseRatings := make(map[string]float64, 3)
+  courseRatings := make(floatMap, 3)
   //courseRatings := map[string]float64{}
 
   courseRatings["go"] = 4.7
@@ -20,4 +27,9 @@ func main() {
   courseRatings["node"] = 4.7
 
   fmt.Println(courseRatings)
+
+  for index, value := range userNames {
+    fmt.Println(index)
+    fmt.Println(value)
+  }
 }
