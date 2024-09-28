@@ -3,20 +3,24 @@ package main
 import "fmt"
 
 func main() {
-	numbers := []int{1, 2, 3, 4}
-
-	transformed := transformNumbers(&numbers, func(number int) int {
-		return number * 2
-	})
-
-	fmt.Println(transformed)
+	fact := factorial(5)
+	fmt.Println(fact)
 }
 
-func transformNumbers(numbers *[]int, transform func(int) int) []int {
-	dNumbers := []int{}
-	for _, v := range *numbers {
-		dNumbers = append(dNumbers, transform(v))
+func factorial(number int) int {
+	if number == 0 {
+		return 1
 	}
+	return number * factorial(number-1)
+	
+	// res := 1
 
-	return dNumbers
+	// for i := 1; i <= number; i++ {
+	// 	res = res * i
+	// }
+
+	// return res
 }
+
+// if a function call itself we use recursion
+// factorial of 5 => 5 * 4 * 3 * 2 * 1 => 120
