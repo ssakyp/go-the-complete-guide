@@ -14,6 +14,7 @@ func slowGreet(phrase string, doneChan chan bool) {
 	fmt.Println("Hello!", phrase)
 	//sends data to the channel
 	doneChan <- true
+	close(doneChan)
 }
 
 func main() {
@@ -29,12 +30,12 @@ func main() {
 	go slowGreet("How...are...you..?", dones[2])
 	//dones[3] = make(chan bool)
 	go greet("I hope you are ok!", dones[3])
-	
+
 	//<-done //data is coming out let it flow into the void
 	//for _, done := range dones {
-//		<-done
-//	}
-	for doneChan := range done {
-		fmt.Println(done)
+	//		<-done
+	//	}
+	for range dones {
+		//fmt.Println(done)
 	}
 }
